@@ -1,1 +1,1 @@
-# Sigma
+# KBBstrips
