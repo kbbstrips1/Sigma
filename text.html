@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hack Systeem</title>
+    <style>
+        body {
+            background-color: black;
+            color: green;
+            font-family: "Courier New", monospace;
+            padding: 20px;
+            text-align: center;
+        }
+        #terminal {
+            width: 80%;
+            height: 300px;
+            background: black;
+            border: 1px solid green;
+            padding: 10px;
+            overflow-y: auto;
+            margin: 20px auto;
+            text-align: left;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hack Systeem</h1>
+    <div id="terminal"></div>
+    <p>Press ENTER to enter system...</p>
+    
+    <script>
+        const codeSnippets = [
+            "struct group_info *alloc_group(int gid) {",
+            "    struct group_info *group;",
+            "    group = kmalloc(sizeof(*group), GFP_KERNEL);",
+            "    if (!group) return NULL;",
+            "    group->gid = gid;",
+            "    return group;",
+            "}",
+            "void add_user_to_group(struct user *usr, int gid) {",
+            "    struct group_info *group = alloc_group(gid);",
+            "    if (group) usr->group = group;",
+            "}" 
+        ];
+
+        let terminal = document.getElementById("terminal");
+        let codeIndex = 0;
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                terminal.innerHTML += "\n> ENTERED SYSTEM...\n";
+                terminal.scrollTop = terminal.scrollHeight;
+                setTimeout(() => {
+                    window.location.href = "https://r.mtdv.me/CdOev6-dvq";
+                }, 2000); // Rickroll na 2 seconden
+            } else {
+                if (codeIndex >= codeSnippets.length) {
+                    codeIndex = 0;
+                }
+                terminal.innerHTML += codeSnippets[codeIndex] + "\n";
+                terminal.scrollTop = terminal.scrollHeight;
+                codeIndex++;
+            }
+        });
+    </script>
+</body>
+</html>
