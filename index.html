@@ -11,26 +11,59 @@
             font-family: "Courier New", monospace;
             padding: 20px;
             text-align: center;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         #terminal {
-            width: 80%;
+            width: 100%;
             height: 300px;
             background: black;
             border: 1px solid green;
             padding: 10px;
-            margin: 20px auto;
+            margin: 20px 0;
             overflow-y: auto;
             display: flex;
-            align-items: center;
-            justify-content: center;
             flex-direction: column;
-            text-align: center;
+            align-items: center;
+            justify-content: flex-start;
             white-space: pre-wrap;
+            font-size: 1.2em;
+            box-sizing: border-box;
         }
 
         #terminal-content {
-            text-align: center;
+            text-align: left;
+            word-wrap: break-word;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+
+        /* Zorg ervoor dat de terminal niet te groot is op kleine schermen */
+        @media (max-width: 600px) {
+            #terminal {
+                height: 200px;
+                font-size: 1em;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            p {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
